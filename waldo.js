@@ -1,12 +1,13 @@
-function findWaldo(arr, found) {
-  arr.forEach(function(currentValue){
-    if (currentValue === "Waldo")
-      found(arr.indexOf(currentValue));
+var findWalder = (arr, found) => {
+  arr.forEach((currentValue) => { //currentV.. = element on which loop is currently on
+    if (currentValue === "Waldo") {
+      found(arr.indexOf(currentValue));//callback
+    }
   });
 }
 
-function actionWhenFound(i) {
-  console.log("Found him! He was at " + i + ", not sure where a number is geographically, but it's good. We all just jammin baby, welcome Waldo to This");
+var actionWhenFound = (i) => {
+  console.log(`Found him at ${i}`);
 }
 
-findWaldo(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
+findWalder(["Alice", "Bob", "Waldo", "Winston"], actionWhenFound);
